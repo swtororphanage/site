@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>The Orphanage</title>
 <link rel="stylesheet" type="text/css" href="swtor.css">
 </head>
 <body>
