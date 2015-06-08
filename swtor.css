@@ -1,5 +1,10 @@
 body {
-  background-image: pictures/background.jpg;
+	background-image: url("Pictures/background.jpg");
+	no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 h1 {
   text-align: center;
