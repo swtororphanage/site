@@ -18,5 +18,8 @@ p {
 	background-color:rgba(128,0,128,0.3);
 }
 input[type=submit] {
-background:#B8860B;
+	background:#FFFAF0;
+}
+#navigation {
+	text-align: center;
 }
