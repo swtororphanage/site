@@ -7,6 +7,6 @@
 <body>
 
 <h1>The Orphanage</h1>
-
+<p>Showing the see through background</p>
 </body>
 </html>
