@@ -1,3 +1,7 @@
+<span class="alignLog">
+<input type="submit" value="Sign In" name="signin">
+<input type="submit" value="Sign Up" name="signup">
+</span>
 <div id="navigation">
 <input type="submit" value="News" name="news">
 <input type="submit" value="Forums" name="forums">
@@ -6,8 +10,4 @@
 <input type="submit" value="Officers" name="officer">
 <input type="submit" value="Profile" name="profile">
 <input type="submit" value="Contact" name="contact">
-<span class="alignLog">
-<input type="submit" value="Sign In" name="signin">
-<input type="submit" value="Sign Up" name="signup">
-</span>
 </div>
