@@ -27,9 +27,19 @@ input[type=submit] {
 	text-align:right;
 }
 #header{
+	background-color:rgba(0,0,0,0.3);
 	position: fixed;
-	top: 0;
+	top: 0px;
 	left: 0;
 	z-index: 999;
 	width: 100%;
+	height: 100px;
+}
+#content{
+	background-color:rgba(128,0,128,0.3);
+	position: relative;
+	top: 100px;
+	left: 0;
+	z-index: 998;
+	width: 80%;
 }
