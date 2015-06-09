@@ -1,7 +1,7 @@
-<span class="alignLog">
+<div id="alignLog">
 <input type="submit" value="Sign In" name="signin">
 <input type="submit" value="Sign Up" name="signup">
-</span>
+</div>
 <div id="navigation">
 <input type="submit" value="News" name="news">
 <input type="submit" value="Forums" name="forums">
