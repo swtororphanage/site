@@ -1,5 +1,6 @@
 <div id="header">
 	<h1>The Orphanage</h1>
+	<form action="" method="post">
 	<div id="alignLog">
 		<input type="submit" value="Sign In" name="signin">
 		<input type="submit" value="Sign Up" name="signup">
@@ -13,4 +14,5 @@
 		<input type="submit" value="Profile" name="profile">
 		<input type="submit" value="Contact" name="contact">
 	</div>
+	</form>
 </div>

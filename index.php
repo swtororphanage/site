@@ -8,34 +8,13 @@
 <?php include 'navigation.php';?>
 
 <div id="content">
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
-<p>Showing the see through background</p>
+
+<?php
+if(isset($_POST["calendar"])){
+	include 'calendar.php';
+}
+?>
+
 </div>
 </body>
 </html>
