@@ -37,7 +37,7 @@ input[type=submit] {
 #content{
 	background-color:rgba(128,0,128,0.3);
 	position: relative;
-	top: 125px;
+	top: 130px;
 	z-index: 998;
 	width: 80%;
 	margin-left: auto;
