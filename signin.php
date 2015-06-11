@@ -1,10 +1,6 @@
 <h2>Sign In</h2>
 <br>
 <form action="" method="post">
-  <a href="phpDataBase.php">Product Page</a>
-  <a href="signup.php">Sign Up</a>
-  <br>
-  Data can only be 12 characters long:<br>
   Username: <input type="text" name="user" maxlength="12">
   <br>
   Password: <input type="password" name="pass" maxlength="12">
