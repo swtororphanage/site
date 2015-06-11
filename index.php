@@ -11,6 +11,8 @@
     $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
     $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
     $dsn = 'mysql:host=' . $server . ';dbname=' . $dbname;
+	
+    $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 ?>
 <?php include 'navigation.php';?>
 
@@ -21,6 +23,9 @@ if(isset($_POST["calendar"])){
 }
 if(isset($_POST["signin"])){
 	include 'signin.php';
+}
+if(isset($_POST["signup"])){
+	include 'signup.php';
 }
 ?>
 

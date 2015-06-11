@@ -1,11 +1,11 @@
 <h2>Sign In</h2>
 <br>
 <form action="" method="post">
-  Username: <input type="text" name="user" maxlength="12">
+  Email: <input type="text" name="email" maxlength="12">
   <br>
   Password: <input type="password" name="pass" maxlength="12">
   <br>
-  <input type="submit" value="Submit" name="submit">
+  <input type="submit" value="Sign In" name="submit">
   <br>
 </form>
 <?php
@@ -14,7 +14,7 @@
         
         $link = new PDO($dsn, $username, $password, $options);
         
-	$stmt = $link->prepare("SELECT `User_ID`, `User`, `Pass` FROM `Users` WHERE `User` = '".$_POST['user']."';");
+	$stmt = $link->prepare("SELECT * FROM `User` WHERE `email` = '".$_POST['email']."';");
 	$stmt->execute();
        	$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
        	$stmt->closeCursor();
@@ -22,8 +22,8 @@
 	foreach($user as $u){
 		require 'password.php';
 		if (password_verify($_POST['pass'], $u['Pass'])){
-			$_SESSION['user'] = $_POST['user'];
-			$_SESSION["userid"] = $u['User_ID'];
+			$_SESSION['user'] = $u['name'];
+			$_SESSION["userid"] = $u['user_ID'];
 			header('Location: phpDataBase.php');
 		}
 		else {
