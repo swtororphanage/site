@@ -5,20 +5,22 @@
 <link rel="stylesheet" type="text/css" href="swtor.css">
 </head>
 <body>
+<?php
+    $server = getenv('OPENSHIFT_MYSQL_DB_HOST');
+    $dbname = 'swtor';
+    $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+    $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+    $dsn = 'mysql:host=' . $server . ';dbname=' . $dbname;
+?>
 <?php include 'navigation.php';?>
 
 <div id="content">
-<img src="Pictures/1.jpg">
-<br>1
-<br>
-<img src="Pictures/2.jpg">
-<br>2
-<br>
-<img src="Pictures/3.jpg">
-<br>3
 <?php
 if(isset($_POST["calendar"])){
 	include 'calendar.php';
+}
+if(isset($_POST["signin"])){
+	include 'signin.php';
 }
 ?>
 
