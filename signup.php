@@ -3,7 +3,7 @@
 <a href="phpDataBase.php">Product Page</a>
 <a href="signin.php">Sign In</a>
 <br>
-<table>
+<table style="margin: 0px auto;">
 	<tr>
 		<td>Email:</td>
 		<td><input type="email" name="email"></td>
