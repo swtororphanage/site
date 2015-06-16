@@ -5,19 +5,19 @@
 <br>
 <table style="margin: 0px auto;">
 	<tr>
-		<td>Email:</td>
+		<td align="right">Email:</td>
 		<td><input type="email" name="email"></td>
 	</tr>
 	<tr>
-		<td>Password:</td>
+		<td align="right">Password:</td>
 		<td><input type="password" name="pass"></td>
 	</tr>
 	<tr>
-		<td>Re-enter Password:</td>
+		<td align="right">Re-enter Password:</td>
 		<td><input type="password" name="pass2"></td>
 	</tr>
 	<tr>
-		<td>SWTOR main character name:</td>
+		<td align="right">SWTOR main character name:</td>
 		<td><input type="text" name="name"></td>
 	</tr>
 	<tr>
