@@ -3,15 +3,27 @@
 <a href="phpDataBase.php">Product Page</a>
 <a href="signin.php">Sign In</a>
 <br>
-Email: <input type="email" name="email">
-<br>
-Password:<input type="password" name="pass">
-<br>
-Re-enter Password:<input type="password" name="pass2">
-<br>
-SWTOR main character name: <input type="text" name="name">
-<br>
-<input type="submit" value="Create User" name="submit">
+<table>
+	<tr>
+		<td>Email:</td>
+		<td><input type="email" name="email"></td>
+	</tr>
+	<tr>
+		<td>Password:</td>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td>Re-enter Password:</td>
+		<td><input type="password" name="pass2"></td>
+	</tr>
+	<tr>
+		<td>SWTOR main character name:</td>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="Create User" name="submit"></td>
+	</tr>
+</table>
 </form>
 
 <?php
