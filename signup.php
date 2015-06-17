@@ -21,6 +21,7 @@
 		<td><input type="text" name="name"></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td><input type="submit" value="Create User" name="submit"></td>
 	</tr>
 </table>

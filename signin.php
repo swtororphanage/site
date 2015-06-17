@@ -1,12 +1,20 @@
 <h2>Sign In</h2>
 <br>
 <form action="" method="post">
-  Email: <input type="text" name="email" maxlength="12">
-  <br>
-  Password: <input type="password" name="pass" maxlength="12">
-  <br>
-  <input type="submit" value="Sign In" name="submit">
-  <br>
+<table style="margin: 0px auto;">
+	<tr>
+		<td align="right">Email:</td>
+		<td><input type="text" name="email" maxlength="12"></td>
+	</tr>
+	<tr>
+		<td align="right">Password:</td>
+		<td><input type="password" name="pass" maxlength="12"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Sign In" name="submit"></td>
+	</tr>
+</table>
 </form>
 <?php
     try {
