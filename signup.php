@@ -1,8 +1,5 @@
 <h1>Sign Up</h1>
 <form action="" method="post">
-<a href="phpDataBase.php">Product Page</a>
-<a href="signin.php">Sign In</a>
-<br>
 <table style="margin: 0px auto;">
 	<tr>
 		<td align="right">Email:</td>
@@ -29,9 +26,9 @@
 
 <?php
 if(isset($_POST['submit']) && isset($_POST['user']) && isset($_POST['pass'])){
-	try {	
+	try {
         $link = new PDO($dsn, $username, $password, $options);
-		$sql = 'SELECT User FROM Users';
+		$sql = 'SELECT * FROM Users';
         $stmt = $link->prepare($sql);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -39,40 +36,42 @@ if(isset($_POST['submit']) && isset($_POST['user']) && isset($_POST['pass'])){
 	
 		$message = "";
 		foreach($users as $u){
-			if($u['User'] == $_POST['user'])
+			if($u['name'] == $_POST['name'])
 			{
-				$message = 'Username is taken.';
+				$message += ' Username is taken.';
+			}
+			if($u['email'] == $_POST['email'])
+			{
+				$message += ' Email is taken.';
 			}
 		}
 	
 		if($message == ""){
-			require 'password.php';
-			$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-			$sql = "INSERT INTO `Users`(`User`, `Pass`) VALUES ('" . $_POST['user'] . "','" .$pass. "');";
-				$stmt = $link->prepare($sql);
-				$stmt->execute();
-				$stmt->closeCursor();
-			
-			$stmt = $link->prepare("SELECT `User_ID`, `User`, `Pass` FROM `Users` WHERE `User` = '".$_POST['user']."';");
-			$stmt->execute();
-				$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-				$stmt->closeCursor();
-			$usid = "";	
-			foreach($user as $u){
-				$usid = $u['User_ID'];
-			}
-			for($i = 1; $i <= 6; $i++){
-				$sql = "INSERT INTO `Bought_items`(`images_id`, `User_ID`, `bought`) VALUES (".$i.",".$usid.",0);";
+				require 'password.php';
+				$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+				$sql = "INSERT INTO `Users`(`User`, `Pass`) VALUES ('" . $_POST['user'] . "','" .$pass. "');";
 					$stmt = $link->prepare($sql);
 					$stmt->execute();
 					$stmt->closeCursor();
+				
+				$stmt = $link->prepare("SELECT `User_ID`, `User`, `Pass` FROM `Users` WHERE `User` = '".$_POST['user']."';");
+				$stmt->execute();
+					$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					$stmt->closeCursor();
+				$usid = "";	
+				foreach($user as $u){
+					$usid = $u['User_ID'];
+				}
+				for($i = 1; $i <= 6; $i++){
+					$sql = "INSERT INTO `Bought_items`(`images_id`, `User_ID`, `bought`) VALUES (".$i.",".$usid.",0);";
+						$stmt = $link->prepare($sql);
+						$stmt->execute();
+						$stmt->closeCursor();
+				}		
 			}
-			header('Location: signin.php');
-		}
 		else {
 			echo $message;
 		}
-		
 	}
 	catch (PDOException $e){
 		echo 'Sorry no connection, try again later';
