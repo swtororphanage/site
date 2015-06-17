@@ -50,8 +50,8 @@ if(isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['pass'])
 			if($message == ""){
 					require 'password.php';
 					$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-					$sql = "INSERT INTO `User`(`pass`, `email`, `swtor_name`) VALUES ("
-					.$pass.",".$_POST['email'].",".$_POST['name'].");";
+					$sql = "INSERT INTO `User`(`pass`, `email`, `swtor_name`) VALUES ('"
+					.$pass."','".$_POST['email']."','".$_POST['name']."');";
 					$stmt = $link->prepare($sql);
 					$stmt->execute();
 					$stmt->closeCursor();
