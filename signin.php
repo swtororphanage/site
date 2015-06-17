@@ -17,9 +17,8 @@
 </table>
 </form>
 <?php
+if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['submit'])){
     try {
-        if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['submit'])){
-        
 			$link = new PDO($dsn, $username, $password, $options);
 			
 			$stmt = $link->prepare("SELECT * FROM `User` WHERE `email` = '".$_POST['email']."';");
@@ -30,19 +29,17 @@
 			foreach($user as $u){
 				require 'password.php';
 				if (password_verify($_POST['pass'], $u['Pass'])){
-					$_SESSION['user'] = $u['name'];
-					$_SESSION["userid"] = $u['user_ID'];
-					header('Location: phpDataBase.php');
+					$_SESSION['name'] = $u['name'];
 				}
 				else {
 					echo 'Wrong Username or Password';
 				}
 			}
-        }
-        else if (isset($_POST['submit'])){
-        	echo 'Please enter a valid username and password';
-        }
     } catch (Exception $ex) {
         echo '<p style="color:white;">Couldnt connect to Database try again later</p>';
     }
+}
+else if (isset($_POST['submit'])){
+	echo 'Please enter a valid username and password';
+}
 ?>
