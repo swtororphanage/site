@@ -61,14 +61,14 @@ if(isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['pass'])
 			}
 		}
 		catch (PDOException $e){
-			echo 'Sorry no connection, try again later';
+			$_SESSION['message'] = 'Sorry no connection, try again later';
 		}
 	}
 	else {
-		echo "Passwords were not the same, please try again";
+		$_SESSION['message'] = "Passwords were not the same, please try again";
 	}
 }
 else {
-	echo 'Please fill in all the information';
+	$_SESSION['message'] = 'Please fill in all the information';
 }
 ?>

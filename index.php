@@ -6,6 +6,8 @@
 </head>
 <body>
 <?php
+	session_start();
+	$_SESSION['message'] = "";
     $server = getenv('OPENSHIFT_MYSQL_DB_HOST');
     $dbname = 'swtor';
     $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
@@ -18,6 +20,7 @@
 
 <div id="content">
 <?php
+echo $_SESSION['message'];
 if(isset($_POST["calendar"])){
 	include 'calendar.php';
 }

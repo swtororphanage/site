@@ -32,14 +32,14 @@ if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['submit'])){
 					$_SESSION['name'] = $u['name'];
 				}
 				else {
-					echo 'Wrong Username or Password';
+					$_SESSION['message'] = 'Wrong Username or Password';
 				}
 			}
     } catch (Exception $ex) {
-        echo '<p style="color:white;">Couldnt connect to Database try again later</p>';
+        $_SESSION['message'] =  '<p style="color:white;">Couldnt connect to Database try again later</p>';
     }
 }
 else if (isset($_POST['submit'])){
-	echo 'Please enter a valid username and password';
+	$_SESSION['message'] =  'Please enter a valid username and password';
 }
 ?>
