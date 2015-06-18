@@ -19,6 +19,13 @@
 <?php
 if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['submit'])){
     try {
+			$server = getenv('OPENSHIFT_MYSQL_DB_HOST');
+			$dbname = 'swtor';
+			$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+			$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+			$dsn = 'mysql:host=' . $server . ';dbname=' . $dbname;
+			
+			$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 			$link = new PDO($dsn, $username, $password, $options);
 			
 			$stmt = $link->prepare("SELECT * FROM `User` WHERE `email` = '".$_POST['email']."';");

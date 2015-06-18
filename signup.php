@@ -29,8 +29,16 @@ if(isset($_POST['submit']) && isset($_POST['email']) && isset($_POST['pass'])
 	&& isset($_POST['pass2']) && isset($_POST['name'])){
 	if ($_POST['pass'] == $_POST['pass2']){
 		try {
+			$server = getenv('OPENSHIFT_MYSQL_DB_HOST');
+			$dbname = 'swtor';
+			$username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+			$password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+			$dsn = 'mysql:host=' . $server . ';dbname=' . $dbname;
+			
+			$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+			
 			$link = new PDO($dsn, $username, $password, $options);
-			$sql = 'SELECT * FROM User';
+			$sql = 'SELECT * FROM `User`;';
 			$stmt = $link->prepare($sql);
 			$stmt->execute();
 			$users = $stmt->fetchAll(PDO::FETCH_ASSOC);

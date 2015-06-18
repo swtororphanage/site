@@ -8,13 +8,6 @@
 <?php
 	session_start();
 	$_SESSION['message'] = "";
-    $server = getenv('OPENSHIFT_MYSQL_DB_HOST');
-    $dbname = 'swtor';
-    $username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-    $password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-    $dsn = 'mysql:host=' . $server . ';dbname=' . $dbname;
-	
-    $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 ?>
 <?php include 'navigation.php';?>
 
