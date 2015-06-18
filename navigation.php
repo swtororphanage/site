@@ -1,6 +1,6 @@
 <div id="header">
 	<h1>The Orphanage</h1>
-	<form action="" method="post">
+	<form action="" method="get">
 	<div id="alignLog">
 	<?php
 	if (isset($_SESSION["user"])){
